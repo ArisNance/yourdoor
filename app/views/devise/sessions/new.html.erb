@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourdoor</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+		
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<%= stylesheet_link_tag "splash" %>
+<%= stylesheet_link_tag "style" %>
+<%= stylesheet_link_tag "font-awesome.min.css" %>
+
+<%= javascript_include_tag "jquery-1.11.1.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "jquery.backstretch.min.js" %>
+<%= javascript_include_tag "scripts.js" %>
+
+
+<style>
+  span{
+    color:#26c281;
+    font-weight:bold;
+    font-size:20px;
+  }
+</style>
+
+</head>  
+
+<body>
+ 
+    <!-- /.container -->
+
+    
+    <!-- Facebook login link --> 
+    
+   
+<div class="col-sm-5 form-box">
+    <div class="form-top">
+      <div class="form-top-left">  
+        
+         <div class="col-sm-7 text">
+                <div class="greetings">
+                 <center><h1><strong>Yourdoor</strong>Sign Up</h1></center>
+                <div class="description"></div>
+                  <p>
+                      Eat like a local. Yourdoor partners with a few of Portland's best restaurants & Chef's each week to bring you freshly sourced Portlandian meals directly to your home or business. Take a look at our <span>How it works</span> section to see how we do it! 
+      
+                 </p>
+  <center><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-link-2" %></center>
+  </div>
+  </div>
+      
+        <br>      
+        <h2 id="cursive">Log in</h2>
+        <p>Fill in the form below to get instant access:</p>
+        </div>
+        <div class="form-top-right">
+          
+        </div>
+        <div class="form-top-divider"></div>
+        </div>
+        <div class="form-bottom"> 
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+  </div>
+
+<div class="form-group">
+  <% if devise_mapping.rememberable? -%>
+    <div class="form-group">
+      <%= f.check_box :remember_me %> Want us to remember you?
+    </div>
+  <% end -%>
+
+  <div id="buttons" class="actions">
+    <%= f.submit "Log in", :class => "btn btn-primary" %>
+    <br>
+    <br>
+    <%= link_to "Forgot Password", new_user_password_path, :class => "btn btn-primary" %>
+  </div>
+  
+<% end %>
+</div>
+</div>
+</div>
+
+<div class="backstretch"><%= image_tag "salad.jpg", :class => "style_image" %></div>
+
+</body>
+</html>

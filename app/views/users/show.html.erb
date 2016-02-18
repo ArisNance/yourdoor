@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourdoor</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+		
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+<%= stylesheet_link_tag "splash" %>
+<%= stylesheet_link_tag "style" %>
+<%= stylesheet_link_tag "font-awesome.min.css" %>
+<%= stylesheet_link_tag "flipclock.css" %>
+
+<%= javascript_include_tag "jquery-1.11.1.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "jquery.backstretch.min.js" %>
+<%= javascript_include_tag "scripts.js" %>
+<%= javascript_include_tag "flipclock.js" %>
+
+<style>
+    label{
+        color:white;
+        font-size:30px;
+        font-family: 'Raleway';
+    }
+    
+    span{
+        color:#26c281;
+        font-family:'Oswald';
+    }
+</style>
+
+</head>    
+
+<body>
+ <div class="col-sm-5 form-box">
+    <div class="form-top">
+      <div class="form-top-left">  
+        
+         <div class="col-sm-7 text">
+                <div class="greetings">
+                <div class="description"></div>
+                
+            
+                  <p>
+                      Eat like a local anywhere with Yourdoor. We challenged some of Portland's trendiest chef's to create an exclusive menu dish for our Yourdoor customers in Seattle, and they did not disappoint.  
+      
+                 </p>
+                      
+        </div>
+    <div class="col-md-9">
+        <div class="greetings">
+
+        </div>
+        </div>
+        </div>
+          
+          <h1><strong><%= @user.fullname %></strong></h1>
+
+              
+        <p>Edit the fields below you wish to edit.</p>
+        </div>
+        <div class="form-top-right">
+          <%= image_tag avatar_url(@user), class: "avatar-full" %>
+        </div>
+        <div class="form-top-divider"></div>
+        </div>
+        <div class="form-bottom">  
+            
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+        </div>
+        
+</div>
+</div>
+
+<div id="clock">  <label><span>Time remaining:</span> Order soon.
+<br>
+<br> 
+<div class="clock" style="margin:2em;"></div>
+</label>
+</div>
+
+<div class="backstretch"><%= image_tag "port.jpeg", :class => "style_image" %></div>
+
+
+<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the past. In this case, it's always been since Jan 1
+				var pastDate  = new Date(currentDate.getFullYear(), 0, 1);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter'
+				});
+			});
+		</script>
+</body>
+</html>

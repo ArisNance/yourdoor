@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  
+  <%= javascript_include_tag 'maps', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<title>YourDoor</title>
+<body>
+  
+  <%= render 'shared/navbar' %>
+  
+  <%= render 'shared/message' %> <!-- removed from edit.html.erb from registration folder. -->
+  
+  
+  
+  <div class="container">
+  <%= yield %>
+  </div>
+
+</body>
+</html>

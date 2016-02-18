@@ -1,0 +1,46 @@
+<!--static bootstrap nav bar -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "YourDoor" %> 
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+          
+          <% if(!user_signed_in?) %> <!-- if user not signed in, show these links -->
+              <li><%= link_to "Log In", new_user_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li><%= link_to "Our Blog", new_user_registration_path %></li>
+
+
+
+          <% else %> <!-- if users signed in, show these links. -below -->
+            <li class="dropdown">
+             
+                <% image_tag avatar_url(current_user), class: "img-circle" %>&nbsp<!-- NOT WORKING. Refer to Application_helper.rb to config -->
+                <% current_user .fullname %> <span class="caret"></span></a> <!-- current_user.email shows current users email NOT WORKING -->
+                
+                <li><a href="#">Your Trips</a></li>
+                <li role="separator" class="divider"></li>
+                <li><%=link_to "Hungry?", root_path %></li>
+                <li><%= link_to "My Profile", current_user %></li> 
+                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                
+              </li>
+          <% end %>
+      
+              </ul>
+            </div>
+            </div>
+            </nav>  
+            
+          
+            
+          

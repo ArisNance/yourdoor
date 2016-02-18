@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+   <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Yourdoor</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+		
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<%= stylesheet_link_tag "splash" %>
+<%= stylesheet_link_tag "style" %>
+<%= stylesheet_link_tag "font-awesome.min.css" %>
+
+<%= javascript_include_tag "jquery-1.11.1.min.js" %>
+<%= javascript_include_tag "bootstrap.min.js" %>
+<%= javascript_include_tag "jquery.backstretch.min.js" %>
+<%= javascript_include_tag "scripts.js" %>
+
+
+</head>    
+
+
+<body>
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+
+<div class="top-content">
+  
+    <div class="inner-bg">
+       <div class="container">
+          <div class="row">
+              <div class="col-sm-7 text">
+                <div class="greetings">
+  <h1><strong>Yourdoor</strong>Sign Up</h1>
+  <div class="description"></div>
+  <p>
+      Eat like a local anywhere with Yourdoor. We challenged some of Portland's trendiest chef's to create an exclusive menu dish for our Yourdoor customers in Seattle, and they did not disappoint.  
+      
+  </p>
+  <%= link_to "Sign Up with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-link-2" %>
+  </div>
+  </div>
+  
+  
+  <div class="top-big-link">
+    
+  </div>
+  </div>
+  <div class="col-sm-5 form-box">
+    <div class="form-top">
+      <div class="form-top-left">
+        <h3>Sign up now</h3>
+        <p>Fill in the form below to get instant access:</p>
+        </div>
+        <div class="form-top-right">
+          <i class="fa fa-pencil fa-sm"></i>
+        </div>
+        <div class="form-top-divider"></div>
+        </div>
+        
+        <div class="form-bottom">
+          <div class="form-group">
+            <%= f.text_field :fullname, autofocus: true, :class => "form-control", :placeholder => "Full Name" %>          
+        </div>
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
+        </div>
+        <div class="form-group">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br/>
+            <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
+        </div>
+        <div class="actions">
+            
+           
+             <%= f.submit "Sign up", :class => "btn btn-primary" %>
+            
+        </div>
+        <br>
+        <br>
+        <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+      </div>
+      <% end %>
+        </div>
+      </div>
+    </div>
+<!-- Javascript -->
+        
+        
+        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
+<div class="backstretch"><%= image_tag "cone.jpg", :class => "style_image" %></div>
+
+</body>
+</html>
+
