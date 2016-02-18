@@ -16,7 +16,6 @@ Rails.application.config.assets.precompile += %w( font-awesome.min.css )
 Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( flipclock.css )
 
-Rails.application.config.assets.precompile += %w( maps.js )
 Rails.application.config.assets.precompile += %w( jquery-1.11.1.min.js )
 Rails.application.config.assets.precompile += %w( bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( jquery.backstretch.min.js )
